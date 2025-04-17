@@ -1,0 +1,25 @@
+/** Home - Demo
+* https://demo.richrelevance.com	
+* Step 1. By browsing the 'Home page' html dom tree, establish this JIW code is
+* only executing in the 'Home page'.
+*/
+var isHomePage = window.page?.pageType == 'home';
+if (isHomePage) {
+  eventContext.type = "HOME_PAGE:VIEW"
+  /**
+   * Step 2: Aquiring needed event data elements of Home page from the DOM stucture.
+   */
+  eventContext.data.sessionId = window.page?.sessionId ?? '';
+  eventContext.data.userId = window.page?.userId ?? '';
+	
+console.log("Prashant Testing PROD 5Dec23-1");
+
+  /**
+   * Step 4: Return true only after aquiring all needed 'eventContext'.
+   * IT-14538: TestPG1
+   */
+  return true;
+} else {
+console.log("Prashant Testing on PROD 9Aug23-1, NOT a HOME page");
+
+}
